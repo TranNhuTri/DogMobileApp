@@ -2,12 +2,17 @@ package com.example.dogapp.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class DogBreed {
+import java.io.Serializable;
+
+public class DogBreed implements Serializable {
     @SerializedName("id")
     private int id;
 
     @SerializedName("bred_for")
     private String bredFor;
+
+    @SerializedName("breed_group")
+    private String bredGroup;
 
     @SerializedName("name")
     private String name;
@@ -18,14 +23,28 @@ public class DogBreed {
     @SerializedName("origin")
     private String origin;
 
+    @SerializedName("temperament")
+    private String temperament;
+
+    @SerializedName("height")
+    private Unit height;
+
+    @SerializedName("weight")
+    private Unit weight;
+
     @SerializedName("url")
     private String url;
 
-    public DogBreed(int id, String name, String lifeSpan, String origin, String url) {
+    public DogBreed(int id, String bredFor, String bredGroup, String name, String lifeSpan, String origin, String temperament, Unit height, Unit weight, String url) {
         this.id = id;
+        this.bredFor = bredFor;
+        this.bredGroup = bredGroup;
         this.name = name;
         this.lifeSpan = lifeSpan;
         this.origin = origin;
+        this.temperament = temperament;
+        this.height = height;
+        this.weight = weight;
         this.url = url;
     }
 
@@ -43,6 +62,14 @@ public class DogBreed {
 
     public void setBredFor(String bredFor) {
         this.bredFor = bredFor;
+    }
+
+    public String getBredGroup() {
+        return bredGroup;
+    }
+
+    public void setBredGroup(String bredGroup) {
+        this.bredGroup = bredGroup;
     }
 
     public String getName() {
@@ -67,6 +94,30 @@ public class DogBreed {
 
     public void setOrigin(String origin) {
         this.origin = origin;
+    }
+
+    public String getTemperament() {
+        return temperament;
+    }
+
+    public void setTemperament(String temperament) {
+        this.temperament = temperament;
+    }
+
+    public Unit getHeight() {
+        return height;
+    }
+
+    public void setHeight(Unit height) {
+        this.height = height;
+    }
+
+    public Unit getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Unit weight) {
+        this.weight = weight;
     }
 
     public String getUrl() {
